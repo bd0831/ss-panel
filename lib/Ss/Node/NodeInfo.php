@@ -4,10 +4,16 @@
 namespace Ss\Node;
 
 
-class NodeInfo extends \Ss\Etc\Db {
+class NodeInfo{
 
     private $table = "ss_node";
-
+    private $db;
+    private $id;
+    function __construct($id){
+        global $db;
+        $this->db=$db;
+        $this->id=$id;
+    }
     function NodeArray(){
         $datas = $this->db->select($this->table,"*",[
             "id" => $this->id,
@@ -16,28 +22,24 @@ class NodeInfo extends \Ss\Etc\Db {
         return $datas['0'];
     }
 
-    function Server(){
-        return $this->NodeArray()['node_server'];
-    }
-
-    function Method(){
-        return $this->NodeArray()['node_method'];
-    }
-
     function Del(){
         $this->db->delete($this->table,[
             "id" => $this->id
         ]);
     }
 
-    function Update($node_name,$node_type,$node_server,$node_method,$node_info,$node_status,$node_order){
+    function Update($node_name,$node_type,$node_server,$node_method,$node_protocol,
+        $node_protocol_param,$node_obfs,$node_obfs_param,$node_info,$node_order){
         $this->db->update("ss_node", [
             "node_name" => $node_name,
             "node_type" => $node_type,
             "node_server" => $node_server,
             "node_method" => $node_method,
+            "node_protocol"=>$node_protocol,
+            "node_protocol_param"=>$node_protocol_param,
+            "node_obfs"=>$node_obfs,
+            "node_obfs_param"=>$node_obfs_param,
             "node_info" => $node_info,
-            "node_status" => $node_status,
             "node_order" =>  $node_order
         ],[
             "id[=]"  => $this->id

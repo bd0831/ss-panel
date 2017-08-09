@@ -1,6 +1,5 @@
 <?php
 require_once '_main.php';
-
 //更新
 if(!empty($_POST)){
     $node_id       = $_POST['node_id'];
@@ -8,17 +7,21 @@ if(!empty($_POST)){
     $node_type     = $_POST['node_type'];
     $node_server   = $_POST['node_server'];
     $node_method   = $_POST['node_method'];
+    $node_protocol = $_POST['node_protocol'];
+    $node_protocol_param = $_POST['node_protocol_param'];
+    $node_obfs = $_POST['node_obfs'];
+    $node_obfs_param = $_POST['node_obfs_param'];
     $node_info     = $_POST['node_info'];
-    $node_status   = $_POST['node_status'];
     $node_order    = $_POST['node_order'];
     $node = new \Ss\Node\NodeInfo($node_id);
-    $query = $node->Update($node_name,$node_type,$node_server,$node_method,$node_info,$node_status,$node_order);
+    $query = $node->Update($node_name,$node_type,$node_server,$node_method,$node_protocol,
+        $node_protocol_param,$node_obfs,$node_obfs_param,$node_info,$node_order);
     if($query){
         echo ' <script>alert("更新成功!")</script> ';
         echo " <script>window.location='node.php';</script> " ;
     }
+    exit();
 }
-
 if(!empty($_GET)){
     //获取id
     $id = $_GET['id'];
@@ -69,11 +72,25 @@ if(!empty($_GET)){
                                 <input  class="form-control" name="node_server" value="<?php echo $rs['node_server'];?>" >
                             </div>
 
-
-
                             <div class="form-group">
                                 <label for="cate_method">加密方式</label>
                                 <input  class="form-control" name="node_method" value="<?php echo $rs['node_method'];?>" >
+                            </div>
+                            <div class="form-group">
+                                <label for="cate_method">协议</label>
+                                <input  class="form-control" name="node_protocol" value="<?php echo $rs['node_protocol'];?>" >
+                            </div>
+                            <div class="form-group">
+                                <label for="cate_method">协议参数</label>
+                                <input  class="form-control" name="node_protocol_param" value="<?php echo $rs['node_protocol_param'];?>" >
+                            </div>
+                            <div class="form-group">
+                                <label for="cate_method">混淆</label>
+                                <input  class="form-control" name="node_obfs" value="<?php echo $rs['node_obfs'];?>" >
+                            </div>
+                            <div class="form-group">
+                                <label for="cate_method">混淆参数</label>
+                                <input  class="form-control" name="node_obfs_param" value="<?php echo $rs['node_obfs_param'];?>" >
                             </div>
 
                             <div class="form-group">
@@ -84,11 +101,6 @@ if(!empty($_GET)){
                             <div class="form-group">
                                 <label for="cate_order">分类(0或者1)</label>
                                 <input   class="form-control" name="node_type"  value="<?php echo $rs['node_type'];?>" >
-                            </div>
-
-                            <div class="form-group">
-                                <label for="cate_order">状态</label>
-                                <input   class="form-control" name="node_status"  value="<?php echo $rs['node_status'];?>" >
                             </div>
 
                             <div class="form-group">

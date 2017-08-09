@@ -10,10 +10,9 @@
     <meta charset="utf-8" />
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" media="screen" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--[if lte IE 8]><script src="../themes/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="../themes/css/main.css" />
-    <!--[if lte IE 8]><link rel="stylesheet" href="../themes/css/ie8.css" /><![endif]-->
-    <!--[if lte IE 9]><link rel="stylesheet" href="../themes/css/ie9.css" /><![endif]-->
+
+
 </head>
 <body>
 
@@ -77,7 +76,7 @@
 
 <footer id="footer">
     <ul class="menu">
-        <li><a href="/user">用户中心</a></li><li><a href="/user/tos.php">服务条款</a></li><li>最终解释权归&copy; ssfly所有</li><li>Email: <a href="mailto:hzshang15@gmail.com">hzshang15@gmail.com</a></li>
+        <li><a href="/user">用户中心</a></li><li><a href="/user/tos.php">服务条款</a></li><li>最终解释权归&copy; ssfly所有</li><li>Email: <a href="mailto:admin@ssfly.club">admin@ssfly.club</a></li>
     </ul>
 </footer>
 
@@ -88,7 +87,6 @@
 <script src="../themes/js/jquery.scrollex.min.js"></script>
 <script src="../themes/js/skel.min.js"></script>
 <script src="../themes/js/util.js"></script>
-<!--[if lte IE 8]><script src="../themes/js/ie/respond.min.js"></script><![endif]-->
 <script src="../themes/js/main.js"></script>
 
 </body>

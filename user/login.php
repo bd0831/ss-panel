@@ -15,12 +15,6 @@ require_once '../lib/config.php';
     <link href="../asset/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     <link href="../asset/css/blue.css" rel="stylesheet" type="text/css" />
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="//oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body class="login-page">
 <div class="login-box">
@@ -62,7 +56,7 @@ require_once '../lib/config.php';
                 <h4><i class="icon fa fa-warning"></i> 出错了!</h4>
                 <p id="msg-error-p"></p>
             </div>
-        <a href="resetpwd.php">忘记密码</a><br>
+        <a href="forgetpwd.php">忘记密码</a><br>
         <a href="register.php" class="text-center">注册个帐号</a>
 
     </div><!-- /.login-box-body -->
@@ -82,8 +76,6 @@ require_once '../lib/config.php';
             increaseArea: '20%' // optional
         });
     });
-    // $("#msg-error").hide(100);
-    // $("#msg-success").hide(100);
 </script>
 <script>
     $(document).ready(function(){

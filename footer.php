@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col l6 s12">
                 <h5 class="white-text">关于</h5>
-                <p class="grey-text text-lighten-4">本站提供shadowsocks帐号用于科学上网.</p>
+                <p class="grey-text text-lighten-4">以上！.</p>
             </div>
             <div class="col l3 s12">
                 <h5 class="white-text">用户</h5>
@@ -16,7 +16,7 @@
             <div class="col l3 s12">
                 <h5 class="white-text">页面</h5>
                 <ul>
-                    <li><a class="white-text" href="user/tos.php">TOS</a></li>
+                    <!-- <li><a class="white-text" href="user/tos.php">TOS</a></li> -->
                 </ul>
             </div>
         </div>
@@ -24,10 +24,7 @@
     <div class="footer-copyright">
         <div class="container">
             &copy; <?php echo $site_name."  ".date('Y'); ?>  Powered by <a class="orange-text text-lighten-3" href="https://github.com/hzshang/ss-panel">ss-panel</a> <?php echo $version; ?>
-            Processed in <?php
-            $Runtime->Stop();
-            echo $Runtime->SpendTime()."ms";
-            ?> Theme by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            Theme by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
         </div>
     </div>
 </footer>

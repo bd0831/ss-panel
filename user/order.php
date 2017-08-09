@@ -76,6 +76,7 @@ $keys=array_keys($goods);
 			<div class="clear"> </div>
 		</div>
 		<div class="clear"> </div>
+			 <div align="right"><a1>Tips:购买时只需填写邮箱,用于接受流量卡信息</a1></div>
 	</div>
 </div>
 

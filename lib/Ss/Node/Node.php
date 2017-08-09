@@ -16,19 +16,22 @@ namespace Ss\Node;
      function AllNode(){
          $node_array = $this->db->select("ss_node","*",[
              "ORDER" => "node_order"
-             //"LIMIT" => 21
          ]);
          return $node_array;
      }
 
-     function Add($node_name,$node_type,$node_server,$node_method,$node_info,$node_status,$node_order){
+     function Add($node_name,$node_type,$node_server,$node_method,$node_protocol,$node_protocol_param,$node_obfs,
+        $node_obfs_param,$node_info,$node_order){
          $this->db->insert("ss_node", [
              "node_name" => $node_name,
              "node_type" => $node_type,
              "node_server" => $node_server,
              "node_method" => $node_method,
+             "node_protocol" => $node_protocol,
+             "node_protocol_param" =>$node_protocol_param,
+             "node_obfs" =>$node_obfs,
+             "node_obfs_param" =>$node_obfs_param,
              "node_info" => $node_info,
-             "node_status" => $node_status,
              "node_order" =>  $node_order
          ]);
          return 1;

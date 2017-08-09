@@ -26,8 +26,10 @@ $node = new Ss\Node\Node();
                                     <th>节点</th>
                                     <th>IP</th>
                                     <th>加密</th>
-                                    <th>描述</th>
-                                    <th>排序</th>
+                                    <th>协议</th>
+                                    <th>协议参数</th>
+                                    <th>混淆</th>
+                                    <th>混淆参数</th>
                                     <th>操作</th>
                                 </tr>
                                 <?php
@@ -39,8 +41,10 @@ $node = new Ss\Node\Node();
                                         <td> <?php echo $rs['node_name']; ?></td>
                                         <td> <?php echo $rs['node_server']; ?></td>
                                         <td> <?php echo $rs['node_method']; ?></td>
-                                        <td><?php echo $rs['node_info']; ?></td>
-                                        <td><?php echo $rs['node_order']; ?></td>
+                                        <td><?php echo $rs['node_protocol']; ?></td>
+                                        <td><?php echo $rs['node_protocol_param']; ?></td>
+                                        <td><?php echo $rs['node_obfs']; ?></td>
+                                        <td><?php echo $rs['node_obfs_param']; ?></td>
                                         <td>
                                             <a class="btn btn-info btn-sm" href="node_edit.php?id=<?php echo $rs['id']; ?>">编辑</a>
                                             <a class="btn btn-danger btn-sm" href="node_del.php?id=<?php echo $rs['id']; ?>">删除</a>

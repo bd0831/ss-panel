@@ -1,8 +1,5 @@
 <?php
-//检测是否登录，若没登录则转向登录界面
-
-if(isset($_COOKIE['uid'])|| $_COOKIE['uid'] != ''){
-        //co
+if(isset($_COOKIE['uid'])){
         $uid = $_COOKIE['uid'];
         $user_email = $_COOKIE['user_email'];
         $user_pwd  = $_COOKIE['user_pwd'];

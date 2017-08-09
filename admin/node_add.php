@@ -9,9 +9,14 @@ if(!empty($_POST)){
     $node_info     = $_POST['node_info'];
     $node_status   = $_POST['node_status'];
     $node_order    = $_POST['node_order'];
+    $node_protocol = $_POST['node_protocol'];
+    $node_protocol_param = $_POST['node_protocol_param'];
+    $node_obfs = $_POST['node_obfs'];
+    $node_obfs_param = $_POST['node_obfs_param'];
 
     $node = new Ss\Node\Node();
-    $query = $node->Add($node_name,$node_type,$node_server,$node_method,$node_info,$node_status,$node_order);
+    $query = $node->Add($node_name,$node_type,$node_server,$node_method,$node_protocol,$node_protocol_param,$node_obfs,
+        $node_obfs_param,$node_info,$node_order);
     if($query){
         echo ' <script>alert("添加成功!")</script> ';
         echo " <script>window.location='node.php';</script> " ;
@@ -60,6 +65,23 @@ if(!empty($_POST)){
                                 <input  class="form-control" name="node_method">
                             </div>
 
+                            <div class="form-group">
+                                <label for="cate_method">协议</label>
+                                <input  class="form-control" name="node_protocol">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cate_method">协议参数</label>
+                                <input  class="form-control" name="node_protocol_param">
+                            </div>
+                            <div class="form-group">
+                                <label for="cate_method">混淆</label>
+                                <input  class="form-control" name="node_obfs">
+                            </div>
+                            <div class="form-group">
+                                <label for="cate_method">混淆参数</label>
+                                <input  class="form-control" name="node_obfs_param">
+                            </div>
 
                             <div class="form-group">
                                 <label for="cate_title">节点描述</label>
@@ -69,11 +91,6 @@ if(!empty($_POST)){
                             <div class="form-group">
                                 <label for="cate_order">分类(0或者1)</label>
                                 <input class="form-control" name="node_type">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="cate_order">状态</label>
-                                <input   class="form-control" name="node_status">
                             </div>
 
                             <div class="form-group">

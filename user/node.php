@@ -40,7 +40,6 @@ $node = new Ss\Node\Node();
                                                 操作 <span class="caret"></span>
                                             </a>
                                             <ul class="dropdown-menu">
-                                                <li role="presentation"><a role="menuitem" target="_blank" tabindex="-1" href="node_json.php?id=<?php echo $row['id']; ?>">配置文件</a></li>
                                                 <li role="presentation"><a role="menuitem" target="_blank" tabindex="-1" href="node_qr.php?id=<?php echo $row['id']; ?>">二维码</a></li>
                                             </ul>
                                         </li>
@@ -49,8 +48,15 @@ $node = new Ss\Node\Node();
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_1-1">
                                             <p> <a class="btn btn-xs bg-purple btn-flat margin" href="#">地址:</a> <code><?php echo $row['node_server']; ?></code>
-                                                <a class="btn btn-xs bg-orange btn-flat margin" href="#"><?php echo $row['node_status']; ?></a>
-                                                <a class="btn btn-xs bg-green btn-flat margin" href="#"><?php echo $row['node_method']; ?></a>
+                                                <a class="btn btn-xs bg-blue btn-flat margin" href="#">加密:</a> <code><?php echo $row['node_method']; ?></code>
+                                            </p>
+                                            <p>
+                                                <a class="btn btn-xs bg-red btn-flat margin" href="#">协议:</a> <code><?php echo $row['node_protocol']; ?></code>
+                                                <a class="btn btn-xs bg-green btn-flat margin" href="#">协议参数:</a> <code><?php echo $row['node_protocol_param']; ?></code>
+                                                </p>
+                                                <p>
+                                                <a class="btn btn-xs bg-orange btn-flat margin" href="#">混淆:</a> <code><?php echo $row['node_obfs']; ?></code>
+                                                <a class="btn btn-xs bg-red btn-flat margin" href="#">混淆参数:</a> <code><?php echo $row['node_obfs_param']; ?></code>
                                             </p>
                                             <p> <?php echo $row['node_info']; ?></p>
                                         </div><!-- /.tab-pane -->
@@ -84,7 +90,6 @@ $node = new Ss\Node\Node();
                                                 操作 <span class="caret"></span>
                                             </a>
                                             <ul class="dropdown-menu">
-                                                <li role="presentation"><a role="menuitem" target="_blank" tabindex="-1" href="node_json.php?id=<?php echo $row['id']; ?>">配置文件</a></li>
                                                 <li role="presentation"><a role="menuitem" target="_blank" tabindex="-1" href="node_qr.php?id=<?php echo $row['id']; ?>">二维码</a></li>
                                             </ul>
                                         </li>
@@ -93,8 +98,15 @@ $node = new Ss\Node\Node();
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_1-1">
                                             <p> <a class="btn btn-xs bg-purple btn-flat margin" href="#">地址:</a> <code><?php echo $row['node_server']; ?></code>
-                                                <a class="btn btn-xs bg-orange btn-flat margin" href="#"><?php echo $row['node_status']; ?></a>
-                                                <a class="btn btn-xs bg-green btn-flat margin" href="#"><?php echo $row['node_method']; ?></a>
+                                                <a class="btn btn-xs bg-blue btn-flat margin" href="#">加密:</a> <code><?php echo $row['node_method']; ?></code>
+                                            </p>
+                                            <p>
+                                                <a class="btn btn-xs bg-red btn-flat margin" href="#">协议:</a> <code><?php echo $row['node_protocol']; ?></code>
+                                                <a class="btn btn-xs bg-green btn-flat margin" href="#">协议参数:</a> <code><?php echo $row['node_protocol_param']; ?></code>
+                                                </p>
+                                                <p>
+                                                <a class="btn btn-xs bg-orange btn-flat margin" href="#">混淆:</a> <code><?php echo $row['node_obfs']; ?></code>
+                                                <a class="btn btn-xs bg-red btn-flat margin" href="#">混淆参数:</a> <code><?php echo $row['node_obfs_param']; ?></code>
                                             </p>
                                             <p> <?php echo $row['node_info']; ?></p>
                                         </div><!-- /.tab-pane -->

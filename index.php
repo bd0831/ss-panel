@@ -1,6 +1,7 @@
 <?php
-include_once 'lib/setting.php';
+include_once 'lib/config.php';
 include_once 'header.php';
+$count=$db->count("user");
 ?>
 
 
@@ -9,7 +10,7 @@ include_once 'header.php';
             <br><br>
             <h1 class="header center orange-text"><?php echo $site_name; ?></h1>
             <div class="row center">
-                <h5 class="header col s12 light">轻松科学上网   保护个人隐私</h5>
+                <h5 class="header col s12 light">轻松!!!</h5>
             </div>
             <div class="row center">
                 <a href="user/register.php" id="download-button" class="btn-large waves-effect waves-light orange">立即注册</a>
@@ -38,11 +39,8 @@ include_once 'header.php';
             <div class="col s12 m4">
                 <div class="icon-block">
                     <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-                    <h5 class="center">Open Source</h5>
-
-                    <p class="light">
-                        Totally free and open source. A worldwide community devoted to deliver bug-free code and long-term support.
-                    </p>
+                    </br>
+                    <h5 class="center">已有<?php echo $count;?>人使用本服务</h5>
                 </div>
             </div>
 
@@ -65,5 +63,4 @@ include_once 'header.php';
 
     </div>
 </div>
-<?php  include_once 'ana.php';
-       include_once 'footer.php';?>
+<?php include_once 'footer.php';?>

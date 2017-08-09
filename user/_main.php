@@ -119,6 +119,12 @@ require_once '_check.php';
                         <i class="fa  fa-pencil"></i> <span>修改资料</span>
                     </a>
                 </li>
+
+                <li >
+                    <a href="honor.php">
+                        <i class="fa fa-cogs"></i> <span>网站流水</span>
+                    </a>
+                </li>
             </ul>
         </section>
         <!-- /.sidebar -->

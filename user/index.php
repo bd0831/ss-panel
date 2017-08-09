@@ -46,21 +46,21 @@ pre {
         <section class="content">
             <!-- START PROGRESS BARS -->
             <div class="row">
-                <div class="col-md-6"  style="overflow:auto;max-height: 200px">
-                    <div class="box box-solid">
-                        <div class="box-header">
-                            <h3 class="box-title">公告&FAQ</h3>
-                        </div><!-- /.box-header -->
-                        <div class="box-body">
-                            <pre style="font-size:15px;font-family:verdana;text-indent: -9.4em"  id="Announce">
-                            <?php 
-                                include("announce.php");
-                            ?>
-                            </pre>
-                        </div>
-                        <!-- /.box-body -->
-                    </div><!-- /.box -->
-                </div><!-- /.col (right) -->
+                    <div class="col-md-6"  style="overflow:auto;max-height: 200px">
+                        <div class="box box-solid">
+                            <div class="box-header">
+                                <h3 class="box-title">公告&FAQ</h3>
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <pre style="font-size:15px;font-family:verdana;text-indent: -9.4em"  id="Announce">
+                                <?php 
+                                    include("announce.php");
+                                ?>
+                                </pre>
+                            </div>
+                            <!-- /.box-body -->
+                        </div><!-- /.box -->
+                    </div><!-- /.col (right) -->
 
                 <div class="col-md-6">
                     <div class="box box-solid">
@@ -90,6 +90,7 @@ pre {
                             <p> 端口：<code><?php echo $oo->get_port();?></code> </p>
                             <p> 密码：<?php echo $oo->get_pass();?> </p>
                             <p> 最后使用时间：<code><?php echo date('Y-m-d H:i:s',$unix_time);  ?></code> </p>
+                            <p> 状态：<?php if($oo->get_enable()) echo "可用";else echo "不可用"?></p>
                             <p> 22小时内可以签到一次。</p>
                             <?php  if($oo->is_able_to_check_in())  { ?>
                                 <p id="checkin-btn"> <button id="checkin" class="btn btn-success  btn-flat">签到</button></p>
@@ -129,15 +130,17 @@ pre {
                             <h3 class="box-title">签到获取流量</h3>
                         </div><!-- /.box-header -->
                         <div class="box-body">
+                            <p> 状态：<?php if($oo->get_enable()) echo "可用";else echo "<a href='order.php'>不可用</a>"?></p>
                             <p> 22小时内可以签到一次。</p>
                             <?php  if($oo->is_able_to_check_in())  { ?>
                                 <p id="checkin-btn"> <button id="checkin" class="btn btn-success  btn-flat">签到</button></p>
                             <?php  }else{ ?>
                                 <p><a class="btn btn-success btn-flat disabled" href="#">不能签到</a> </p>
                             <?php  } ?>
+
                             <p id="checkin-msg" ></p>
                             <p>上次签到时间：<code><?php echo date('Y-m-d H:i:s',$oo->get_last_check_in_time());?></code></p>
-                            <p><a class="btn btn-success btn-flat" target= "_blank" href="https://shadowsocks.org/en/download/clients.html">下载客户端</a> </p>
+                            
                         </div><!-- /.box-body -->
                     </div><!-- /.box -->
                 </div><!-- /.col (right) -->
@@ -157,6 +160,23 @@ pre {
                 </div><!-- /.col (right) -->
 
 <?php endif;?>
+                <div class="col-md-6">
+                    <div class="box box-solid">
+                        <div class="box-header">
+                            <h3 class="box-title">客户端连接</h3>
+                        </div><!-- /.box-header -->
+                        <div class="box-body">
+                        <p>下载客户端</p>
+                        <div class="form-group">
+                            <a class="btn btn-danger btn-flat" href="http://ou95do95g.bkt.clouddn.com/ShadowsocksX-NG-R8.app.zip">Mac版</a> 
+                            <a class="btn btn-info btn-flat"  href="http://ou95do95g.bkt.clouddn.com/Win%20R%204.7.0%20win.7z">Window版</a> 
+                            <a class="btn btn-warning btn-flat"  href="http://ou95do95g.bkt.clouddn.com/shadowsocksr-release.apk">Android版</a>
+                        </div>
+                        <p>客户端配置</p>
+                        <a class="btn btn-success btn-flat" href="getConfig.php">导出配置文件</a> 
+                        </div><!-- /.box-body -->
+                    </div><!-- /.box -->
+                </div><!-- /.col (right) -->
 
 
 

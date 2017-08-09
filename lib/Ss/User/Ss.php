@@ -60,6 +60,9 @@ class Ss {
         //global $dbc;
         return $this->get_transfer_enable() - $this->get_transfer();
     }
+    function get_enable(){
+        return $this->get_user_info_array()['enable'];
+    }
 
     //get last time
     function get_last_unix_time(){
