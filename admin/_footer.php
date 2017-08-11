@@ -10,9 +10,6 @@
             All rights reserved.  Powered by  <b>ss-panel</b><?php echo $version; ?>
 </footer>
 </div><!-- ./wrapper -->
-<?php
-include_once '../ana.php';
-?>
 
 <!-- jQuery 2.1.3 -->
 <script src="../asset/js/jQuery.min.js"></script>

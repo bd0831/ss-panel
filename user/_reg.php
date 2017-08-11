@@ -1,14 +1,12 @@
 <?php
 require_once '../lib/config.php';
+
 $email = $_POST['email'];
 $email = strtolower($email);
 $passwd = $_POST['passwd'];
 $name = $_POST['name'];
 $repasswd = $_POST['repasswd'];
 $verCode = $_POST['verCode'];
-
-
-$c = new \Ss\User\UserCheck();
 
 function VCodeIndb($vcode)
 {
@@ -21,7 +19,7 @@ function VCodeIndb($vcode)
     }
     return $ret;
 }
-$a['msg']='';
+$c = new \Ss\User\UserCheck();
 if(!$c->IsEmailLegal($email)){
     $a['msg'] = "邮箱无效";
 }elseif($c->IsEmailUsed($email)){
@@ -38,7 +36,6 @@ if(!$c->IsEmailLegal($email)){
 {
     $a['msg']='验证码不正确';
 }else{
-    // get value
     $ref_by = 0;
     $passwd = \Ss\User\Comm::SsPW($passwd);
     $plan = "A";

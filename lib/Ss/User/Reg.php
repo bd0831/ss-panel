@@ -7,16 +7,13 @@ namespace Ss\User;
 class Reg {
 
     private $db;
-
-    private $table = "user";
-
     function __construct(){
         global $db;
         $this->db = $db;
     }
 
     function GetLastPort(){
-        $datas = $this->db->select($this->table,"*",[
+        $datas = $this->db->select('user',"*",[
             "ORDER" => "uid DESC",
             "LIMIT" => 1
         ]);
@@ -24,10 +21,8 @@ class Reg {
     }
 
     function Reg($username,$email,$pass,$plan,$transfer,$invite_num,$ref_by){
-
         $sspass = \Ss\Etc\Comm::get_random_char(8);
-
-        $this->db->insert($this->table,[
+        $this->db->insert("user",[
            "user_name" => $username,
             "email" => $email,
             "pass" => $pass,

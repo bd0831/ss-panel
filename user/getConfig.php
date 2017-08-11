@@ -5,7 +5,7 @@ $node = new Ss\Node\Node();
 $node0 = $node->NodesArray(0);
 
 $array=[];
-foreach ($nodes0 as $i) {
+foreach ($node0 as $i) {
 	$con['server']=$i['node_server'];
 	$con['server_port']=intval($oo->get_port());
 	$con['method']=$i['node_method'];

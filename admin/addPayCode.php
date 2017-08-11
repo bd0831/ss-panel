@@ -1,7 +1,8 @@
 <?php
 require_once '_main.php';
-require_once '../lib/setting.php'
+require_once '../lib/config.php';
 ?>
+
 <div class="content-wrapper">
             <!-- left column -->
         <section class="content-header">
@@ -52,21 +53,7 @@ require_once '../lib/setting.php'
 <script type="text/javascript">
 	$(document).ready(function(){
 		function addPayCode(){
-			$.ajax({
-				type:"POST",
-				url:'_addPayCode.php',
-				data:{
-					'type':$("#type").val(),
-					'total':$("#total").val()
-				},
-				success:function(data){
-					alert("添加成功!");
-					self.location='download.php?path='+data;
-				},
-	            error:function(jqXHR){
-	                alert("发生错误："+jqXHR.status);
-                }
-			});
+			self.location='_addPayCode.php?type='+$("#type").val()+'&total='+$("#total").val();
 		}
 		$("#addPayCode").click(function(){
 			addPayCode();

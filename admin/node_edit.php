@@ -13,20 +13,21 @@ if(!empty($_POST)){
     $node_obfs_param = $_POST['node_obfs_param'];
     $node_info     = $_POST['node_info'];
     $node_order    = $_POST['node_order'];
-    $node = new \Ss\Node\NodeInfo($node_id);
-    $query = $node->Update($node_name,$node_type,$node_server,$node_method,$node_protocol,
+    $node = new \Ss\Node\Node();
+    $query = $node->Update($node_id,$node_name,$node_type,$node_server,$node_method,$node_protocol,
         $node_protocol_param,$node_obfs,$node_obfs_param,$node_info,$node_order);
+
     if($query){
         echo ' <script>alert("更新成功!")</script> ';
         echo " <script>window.location='node.php';</script> " ;
+        exit();
     }
-    exit();
 }
 if(!empty($_GET)){
     //获取id
     $id = $_GET['id'];
-    $node = new \Ss\Node\NodeInfo($id);
-    $rs = $node->NodeArray();
+    $node = new \Ss\Node\Node();
+    $rs = $node->NodeInfo($id);
 }
 
 ?>

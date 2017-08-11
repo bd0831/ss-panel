@@ -36,18 +36,6 @@ $string=[
                         <!-- /.box-body -->
                     </div><!-- /.box -->
                 </div><!-- /.col (right) -->
-
-                <div class="col-md-6">
-                    <div class="box box-solid">
-                        <div class="box-header">
-                            <h3 class="box-title">网站支出</h3>
-                        </div><!-- /.box-header -->
-                        <div class="box-body">
-                        <p></p>
-                        </div>
-                        <!-- /.box-body -->
-                    </div><!-- /.box -->
-                </div><!-- /.col (right) -->
 	    </div>
 	    </section>
 </div>

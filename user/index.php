@@ -153,7 +153,6 @@ pre {
                         <div class="box-body">
                             <p> 端口：<code><?php echo $oo->get_port();?></code> </p>
                             <p> 密码：<?php echo $oo->get_pass();?> </p>
-                            <p> 套餐：<span class="label label-info"> <?php echo $oo->get_plan();?> </span> </p>
                             <p> 最后使用时间：<code><?php echo date('Y-m-d H:i:s',$unix_time);  ?></code> </p>
                         </div><!-- /.box-body -->
                     </div><!-- /.box -->

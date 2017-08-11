@@ -37,7 +37,6 @@ class UserCheck {
         }
     }
 
-
     //
     function IsEmailLegal($email){
         if (filter_var($email, FILTER_VALIDATE_EMAIL )and strpos($email,'chacuo.net') === false) {
@@ -90,4 +89,6 @@ class UserCheck {
             return 0;
         }
     }
+
+
 }
