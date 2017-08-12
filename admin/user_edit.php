@@ -61,9 +61,13 @@ if(!empty($_GET)){
                             </div>
                             
                             <div class="form-group">
-                                <label for="cate_title">邀请码数量</label>
+                                <label for="cate_title">到期时间</label>
+                                <input  class="form-control" id="disableDate"  value="<?php echo $u->DisableDate();?>"  >
+                            </div>
 
-                                <input  class="form-control" id="invite_num"  value="<?php echo $rs['invite_num'];?>"  >
+                            <div class="form-group">
+                                <label for="cate_title">可用</label>
+                                <input class="form-control" id="enable" value="<?php echo$rs['enable'];?>"  >
                             </div>
 
                         </div><!-- /.box-body -->
@@ -102,7 +106,8 @@ require_once '_footer.php'; ?>
                     email: $("#email").val(),
                     passwd: $("#passwd").val(),
                     transfer_enable: $("#transfer_enable").val() * 1024 * 1024 * 1024,
-                    invite_num: $("#invite_num").val()
+                    disableDate: $("#disableDate").val(),
+                    enable: $("#enable").val()
                 },
                 success:function(data){
                     if(data.ok){

@@ -22,13 +22,14 @@ namespace Ss\User;
         return $datas;
      }
 
-     function updateUser($name,$email,$passwd,$transfer_enable,$invite_num){
+     function updateUser($name,$email,$passwd,$transfer_enable,$disableTime,$enable){
          return $this->db->update($this->table,[
              "user_name" => $name,
              "email" => $email,
              "passwd" => $passwd,
              "transfer_enable" => $transfer_enable,
-             "invite_num" => $invite_num
+             "disable_time" => $disableTime,
+             "enable"=>$enable
          ],[
              "uid" => $this->uid
          ]);

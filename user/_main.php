@@ -16,7 +16,7 @@ require_once '_check.php';
     <link href="https://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
     <link href="../asset/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <link href="../asset/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+    <link href="../asset/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />    
 </head>
 <body class="skin-blue">
 <!-- Site wrapper -->
@@ -108,15 +108,8 @@ require_once '_check.php';
                     </a>
                 </li>
                 <li >
-                    <a href="my.php">
-                        <i class="fa fa-user"></i> <span>我的信息</span>
-                    </a>
-                </li>
-
-
-                <li >
                     <a href="update.php">
-                        <i class="fa  fa-pencil"></i> <span>修改资料</span>
+                        <i class="fa  fa-pencil"></i> <span>个人信息</span>
                     </a>
                 </li>
 

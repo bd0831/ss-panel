@@ -2,30 +2,18 @@
 require_once '../lib/config.php';
 require_once '_check.php';
 $payCode=$_POST['payCode'];
-$a['msg']='';
-if(!$db->has('recharge',["AND"=>['code'=>$payCode,'uid'=>'0']])){
-	$a['msg']="充值码无效";
+$pay=new \Ss\Etc\Pay();
+$ret=$pay->recharge($payCode,$uid);
+if($ret>0){
+	$a['ok']=1;
+	$a['msg']=$a['msg']="充值成功，获得".$ret."GB流量";
+	$oo->add_transfer($ret*1024*$tomb);
+	$oo->add_disable_date(3600*24*30);
+	$oo->setEnable();
 }else{
-	$data=$db->select('recharge',[
-		'id','value'
-		],["AND"=>[
-		'code'=>$payCode,
-		'uid'=>'0'
-		]],[
-		'limit'=>'1'
-		])[0];
-	$db->update('recharge',[
-		'uid'=>$oo->uid,
-		'time'=>time()
-		],[
-			'id'=>$data['id']
-		]);
-	$db->update('user',[
-		'enable'=>1
-		],[
-		'uid'=>$oo->uid
-		]);
-	$oo->add_transfer($data['value']*1024*$tomb);
-	$a['msg']="充值成功，获得".$data['value']."GB流量";
+	$a['msg']="充值码无效";
 }
 echo json_encode($a);
+
+
+

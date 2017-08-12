@@ -20,8 +20,9 @@ class Reg {
         return $datas['0']['port'];
     }
 
-    function Reg($username,$email,$pass,$plan,$transfer,$invite_num,$ref_by){
+    function Reg($username,$email,$pass,$transfer){
         $sspass = \Ss\Etc\Comm::get_random_char(8);
+        $time=time()+3600*30*24;
         $this->db->insert("user",[
            "user_name" => $username,
             "email" => $email,
@@ -30,13 +31,10 @@ class Reg {
             "t" => '0',
             "u" => '0',
             "d" => '0',
-            "plan" => $plan,
             "transfer_enable" => $transfer,
             "port" => $this->GetLastPort()+rand(1,5),
-            "invite_num" => $invite_num,
-            "money" => '0',
             "#reg_date" =>  'NOW()',
-            "ref_by" => $ref_by
+            "#disable_time"=>$time
         ]);
     }
 

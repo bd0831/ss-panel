@@ -40,9 +40,8 @@ if(!$c->IsEmailLegal($email)){
     $passwd = \Ss\User\Comm::SsPW($passwd);
     $plan = "A";
     $transfer = $a_transfer;
-    $invite_num = rand($user_invite_min,$user_invite_max);
     $reg = new \Ss\User\Reg();
-    $reg->Reg($name,$email,$passwd,$plan,$transfer,$invite_num,$ref_by);
+    $reg->Reg($name,$email,$passwd,$transfer);
     $a['ok'] = '1';
     $a['msg'] = "注册成功";
 }

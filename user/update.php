@@ -21,6 +21,7 @@ require_once '_main.php'; ?>
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header">
+                        <i class="fa fa-key" aria-hidden="true"></i>
                             <h3 class="box-title">网站登录密码修改</h3>
                         </div><!-- /.box-header -->
                         <!-- form start -->
@@ -61,33 +62,42 @@ require_once '_main.php'; ?>
                 </div>
 
                 <div class="col-md-6">
-                    <div class="box box-solid">
+                    <div class="box box-primary">
                         <div class="box-header">
                             <i class="fa fa-align-left"></i>
                             <h3 class="box-title">Shadowsocksr连接密码修改</h3>
                         </div><!-- /.box-header -->
                         <div class="box-body">
-
                                 <div id="ss-msg-success" class="alert alert-info alert-dismissable" style="display:none" >
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                     <h4><i class="icon fa fa-info"></i> 修改成功!</h4>
                                     <p id="ss-msg-success-p"></p>
                                 </div>
-
-
-
                                 <div class="form-group">
                                     <input type="text" id="sspwd" placeholder="输入新密码" class="form-control"  >
                                 </div>
-
                                 <div class="box-footer">
                                     <button type="submit" id="ss-pwd-update" class="btn btn-primary"  >修改 </button>
                                 </div>
-
                         </div><!-- /.box-body -->
                     </div><!-- /.box -->
                 </div><!-- /.col (right) -->
-
+                <div class="col-md-6">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <h3 class="box-title">个人信息</h3>
+                        </div><!-- /.box-header -->
+                        <div class="box-body">
+                            <p>用户名：<?php echo $U->GetUserName();?></p>
+                            <p>邮箱：<?php echo $user_email; ?></p>
+                            <p>注册时间：<?php echo $U->RegDate();?></p>
+                            <p>到期时间：<?php echo $U->DisableDate();?></p>
+                            <p><a class="btn btn-danger btn-sm" href="kill.php">删除我的账户</a></p>
+                        </div><!-- /.box -->
+                    </div>
+                </div>
             </div>
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->

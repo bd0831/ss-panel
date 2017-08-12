@@ -25,12 +25,15 @@ if(!$c->IsEmailLegal($email)){
     $mail->Subject = $site_name;
     $mail->Body    = '您的验证码为 <b>'.$vcode.'</b>,欢迎使用!';
     $mail->AltBody = '';
-    $mail->send();
-    $db->insert('vcode',[
+    if($mail->send()){
+        $db->insert('vcode',[
         'vcode'=>$vcode
         ]);
-	$a['ok']='1';
-	$a['msg']='验证码已发送';
+        $a['ok']='1';
+        $a['msg']='验证码已发送';
+    }else{
+        $a['msg']=$mail->ErrorInfo;
+    }
 }
 
 echo json_encode($a);

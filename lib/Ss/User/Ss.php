@@ -40,11 +40,6 @@ class Ss {
         return $this->get_user_info_array()['passwd'];
     }
 
-    //返回Plan
-    function  get_plan(){
-        return $this->get_user_info_array()['plan'];
-    }
-
     //返回transfer_enable
     function  get_transfer_enable(){
         return $this->get_user_info_array()['transfer_enable'];
@@ -72,6 +67,9 @@ class Ss {
     //get last check in time
     function get_last_check_in_time(){
         return $this->get_user_info_array()['last_check_in_time'];
+    }
+    function get_disable_time(){
+        return $this->get_user_info_array()['disable_time'];
     }
 
     //check is able to check in
@@ -102,6 +100,25 @@ class Ss {
         ],[
             "uid" => $this->uid
         ]);
+    }
+    function add_disable_date($time){
+        $disable_time=$this->get_disable_time();
+        if($disable_time<time())
+            $t=time()+$time;
+        else
+            $t=$disable_time+$time;
+        $this->db->update("user",[
+            "disable_time" => $t
+        ],[
+            "uid" => $this->uid
+        ]);
+    }
+    function setEnable(){
+        $this->db->update("user",[
+            "enable"=>1
+            ],[
+            "uid"=>$this->uid
+            ]);
     }
 
     //add money
